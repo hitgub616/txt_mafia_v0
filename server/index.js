@@ -16,9 +16,7 @@ const app = express()
 // CORS 설정 수정 - 로컬호스트 허용
 app.use(
   cors({
-    origin: isDev
-      ? ["http://localhost:3000", "http://127.0.0.1:3000", "*"]
-      : [CLIENT_URL, "https://v0-txt-mafia-o3hnz9r54-ryan616s-projects.vercel.app"],
+    origin: "*", // 모든 도메인에서의 요청 허용
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
